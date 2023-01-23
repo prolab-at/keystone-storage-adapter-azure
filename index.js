@@ -80,6 +80,10 @@ AzureAdapter.SCHEMA_FIELD_DEFAULTS = {
 
 AzureAdapter.prototype.uploadFile = function (file, data, callback) {
 	var self = this;
+	if typeof(data) === "function" {
+    		calback = data
+    		data = null
+  	}
 	this.options.generateFilename(file, 0, data, function (err, blobName) {
 		if (err) return callback(err);
 
