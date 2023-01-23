@@ -78,9 +78,9 @@ AzureAdapter.SCHEMA_FIELD_DEFAULTS = {
 	etag: false,
 };
 
-AzureAdapter.prototype.uploadFile = function (file, callback) {
+AzureAdapter.prototype.uploadFile = function (file, data, callback) {
 	var self = this;
-	this.options.generateFilename(file, 0, function (err, blobName) {
+	this.options.generateFilename(file, 0, data, function (err, blobName) {
 		if (err) return callback(err);
 
 		debug('Uploading file %s', blobName);
