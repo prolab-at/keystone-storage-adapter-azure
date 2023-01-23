@@ -80,7 +80,7 @@ AzureAdapter.SCHEMA_FIELD_DEFAULTS = {
 
 AzureAdapter.prototype.uploadFile = function (file, data, callback) {
 	var self = this;
-	if typeof(data) === "function" {
+	if (typeof(data) === "function") {
     		calback = data
     		data = null
   	}
